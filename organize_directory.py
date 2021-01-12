@@ -6,7 +6,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 
 for filename in os.listdir(current_dir):
   # Organize Images into Images folder
-    if filename.endswith(("png", "jpg", "gif", "jpeg", "JPG")):
+    if filename.endswith(("png", "jpg", "gif", "jpeg", "JPG", "bmp", "tif", "tiff")):
         if not os.path.exists('Images'):
             os.mkdir('Images')
         shutil.copy(filename, 'Images')
@@ -22,7 +22,7 @@ for filename in os.listdir(current_dir):
         print('Done in Video')
 
   # Organize Docs into Documents folder
-    if filename.endswith(("docx", "doc", "xml", "xmlx", "pdf", "txt", "xlsx")):
+    if filename.endswith(("docx", "doc", "xml", "xmlx", "pdf", "txt", "xlsx", "rtf", "xlsx", "xls")):
         if not os.path.exists('Documents'):
             os.mkdir('Documents')
         shutil.copy(filename, 'Documents')
@@ -68,5 +68,21 @@ for filename in os.listdir(current_dir):
         shutil.copy(filename, 'Music')
         os.remove(filename)
         print('Done in Music')
+
+ # Organize Adobe files into Adobe folder
+    if filename.endswith(("psd", "ai", "indd")):
+        if not os.path.exists('PSD'):
+            os.mkdir('PSD')
+        shutil.copy(filename, 'PSD')
+        os.remove(filename)
+        print('Done in PSD')
+
+ # Organize PowerPoint into PowerPoint folder
+    if filename.endswith(("ppt", "pptx")):
+        if not os.path.exists('PowerPoint'):
+            os.mkdir('PowerPoint')
+        shutil.copy(filename, 'PowerPoint')
+        os.remove(filename)
+        print('Done in PowerPoint')
 
 print('Done Organizing This Folder !')
