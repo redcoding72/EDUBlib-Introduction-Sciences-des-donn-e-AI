@@ -1,1 +1,1 @@
-# Organize files automaticly in ripository
+# Introduction à la science des données pour l’IA
